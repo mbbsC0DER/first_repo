@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="image-box">
+        <img src="img1.png" alt="Login Illustration" class="image-box">
+    </div>
+    <div class="container">
+        <div class="form-box">
+            <h2 id="title">Login</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="#" id="toggle-signup">Sign Up</a></p>
+            </form>
+            
+            <form id="signup-form" class="hidden">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email ID" required>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+                <p>Already have an account? <a href="#" id="toggle-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.body.style.opacity = 0;
+            setTimeout(function() {
+                window.location.href = 'home.html';
+            }, 500);
+        });
+    </script>
+    <div id="loading-screen" class="hidden">
+        <div class="loading-text">Loading...</div>
+        <div class="emoji">🤪</div>
+    </div>
+    
+</body>
+</html>
